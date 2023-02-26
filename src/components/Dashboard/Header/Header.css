@@ -16,4 +16,5 @@
     align-items: center;
     gap: 10px;
     margin-left: auto;
+    cursor: pointer;
 }

@@ -1,9 +1,11 @@
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline"
 import { Box, Typography } from "@mui/material"
 import React from "react"
+import { useNavigate } from "react-router-dom"
 import "./Header.css"
 
 function Header() {
+    const navigate = useNavigate()
     return (
         <div className="headerMain">
             <div className="headerTitle">
@@ -21,8 +23,8 @@ function Header() {
                     Gita Campus
                 </Typography>
             </div>
-            {/* <Link to="/sadhaks"> */}
-            <div className="sadhaks">
+
+            <div className="sadhaks" onClick={() => navigate(`/Sadhaks/${1}`)}>
                 <PeopleOutlineIcon />
 
                 <Typography variant="h6" component="h1">
@@ -30,7 +32,6 @@ function Header() {
                 </Typography>
                 <div>(20 )</div>
             </div>
-            {/* </Link> */}
         </div>
     )
 }
