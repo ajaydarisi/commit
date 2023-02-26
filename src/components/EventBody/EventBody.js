@@ -1,14 +1,15 @@
-import Box from "@mui/material/Box"
-import Tab from "@mui/material/Tab"
-import Tabs from "@mui/material/Tabs"
-import Typography from "@mui/material/Typography"
-import PropTypes from "prop-types"
-import React from "react"
-import { Analysis } from "../Analysis/Analysis"
-import EventSadhaks from "../Analysis/EventSadhaks/EventSadhaks"
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import PropTypes from "prop-types";
+import React from "react";
+import { Analysis } from "../Analysis/Analysis";
+import EventSadhaks from "../Analysis/EventSadhaks/EventSadhaks";
+import "./EventBody.css";
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props
+    const { children, value, index, ...other } = props;
 
     return (
         <div
@@ -24,28 +25,28 @@ function TabPanel(props) {
                 </Box>
             )}
         </div>
-    )
+    );
 }
 
 TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.number.isRequired,
     value: PropTypes.number.isRequired,
-}
+};
 
 function a11yProps(index) {
     return {
         id: `simple-tab-${index}`,
         "aria-controls": `simple-tabpanel-${index}`,
-    }
+    };
 }
 
-export default function BasicTabs() {
-    const [value, setValue] = React.useState(0)
+export default function BasicTabs({ dateValue }) {
+    const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
-        setValue(newValue)
-    }
+        setValue(newValue);
+    };
 
     return (
         <Box sx={{ width: "100%" }}>
@@ -56,11 +57,11 @@ export default function BasicTabs() {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <EventSadhaks />
+                <EventSadhaks dateValue={dateValue} />
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <Analysis />
             </TabPanel>
         </Box>
-    )
+    );
 }

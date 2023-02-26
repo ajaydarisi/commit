@@ -6,15 +6,16 @@ import dayjs from "dayjs";
 import React, { useState } from "react";
 import EventBody from "../EventBody/EventBody";
 import EventTitle from "../EventTitle/EventTitle";
+import "./Event.css";
 
 export default function MaterialUIPickers() {
-    const [value, setValue] = useState(dayjs(new Date().toISOString()));
+    const [dateValue, setdateValue] = useState(dayjs(new Date().toISOString()));
 
-    const handleChange = (newValue) => {
-        setValue(newValue);
+    const handleChange = newdateValue => {
+        setdateValue(newdateValue);
     };
-    const forApi = value.$D + "-" + value.$M + "-" + value.$y;
-    console.log(forApi, "date ");
+    const dateValueForApi = dateValue.$D + "-" + (dateValue.$M + 1) + "-" + dateValue.$y;
+    console.log(dateValueForApi, "date ");
 
     return (
         <div>
@@ -23,12 +24,12 @@ export default function MaterialUIPickers() {
                 <DesktopDatePicker
                     label="Date"
                     inputFormat="DD-MM-YYYY"
-                    value={value}
+                    dateValue={dateValue}
                     onChange={handleChange}
-                    renderInput={(params) => <TextField {...params} />}
+                    renderInput={params => <TextField {...params} />}
                 />
             </LocalizationProvider>
-            <EventBody />
+            <EventBody dateValue={dateValueForApi} />
         </div>
     );
 }

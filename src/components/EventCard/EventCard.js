@@ -1,16 +1,16 @@
-import React from "react"
-import { useNavigate } from "react-router-dom"
-import Image1 from "../../assets/SudarshanKriya.jpg"
-import "./EventCard.css"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Image1 from "../../assets/SudarshanKriya.jpg";
+import "./EventCard.css";
 
 function EventCard({ cardData }) {
-    const navigate = useNavigate()
-    console.log("card data i s", cardData)
+    const navigate = useNavigate();
+    console.log("card data i s", cardData);
     const data = {
         title: "title",
         time: "time - time",
         attended: 50,
-    }
+    };
     return (
         <div>
             <div className="card">
@@ -19,7 +19,7 @@ function EventCard({ cardData }) {
                     <div className="title">{data.title}</div>
                     <div className="textMedium">{data.time}</div>
                     <div className="textMedium">attended : {data.attended}</div>
-                    <button className="PrimaryBtn" onClick={() => navigate(`/events/${1}`)}>
+                    <button className="PrimaryBtn" onClick={() => navigate(`/events/${cardData?.id}`)}>
                         View
                     </button>
                 </div>
@@ -38,7 +38,7 @@ function EventCard({ cardData }) {
                 </div>
             </div> */}
         </div>
-    )
+    );
 }
 
-export default EventCard
+export default EventCard;

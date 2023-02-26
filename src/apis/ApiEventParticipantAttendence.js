@@ -1,6 +1,8 @@
 import { request } from "../utils/axios-utils.ts";
 
-export const getEventParticipantAttendence = async ({ event_id = 1, date = "26-02-2023" }) => {
+export const getEventParticipantAttendence = async data => {
+    const event_id = data.queryKey[1] || 1;
+    const date = data.queryKey[2] || "27-02-2022";
     return request({
         url: "/event-participant-attendence",
         params: { event_id, date },
