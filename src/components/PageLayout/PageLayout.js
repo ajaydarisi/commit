@@ -10,7 +10,7 @@ function PageLayout({ children }) {
                 <Navbar />
             </div>
             <marquee behavior="" direction="" className="quote">
-                {quote} -- sri sri.
+                <i>{quote}</i> -- sri sri.
             </marquee>
             <div className="mainBody">{children}</div>
         </div>

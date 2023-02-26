@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import React, { useState } from "react";
 import EventBody from "../EventBody/EventBody";
 import EventTitle from "../EventTitle/EventTitle";
+import "./Event.css";
 
 export default function MaterialUIPickers() {
     const [dateValue, setdateValue] = useState(dayjs(new Date().toISOString()));
