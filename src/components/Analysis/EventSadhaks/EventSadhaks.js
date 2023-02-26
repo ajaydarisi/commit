@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material"
+import { TextField } from "@mui/material"
 import Checkbox from "@mui/material/Checkbox"
 import { DataGrid } from "@mui/x-data-grid"
 import React, { useEffect, useState } from "react"
@@ -87,7 +87,9 @@ const EventSadhaks = ({ dateValue }) => {
                 sx={{ maxHeight: 600 }}
             />
             <div className="saveBtn">
-                <Button variant="contained">Save</Button>
+                <button variant="contained" className="PrimaryBtn">
+                    Save
+                </button>
             </div>
         </div>
     )
@@ -106,7 +108,14 @@ export const MyCheckbox = ({ customRowData = [], setCustomRowData, row }) => {
         setCustomRowData(x)
     }
     const label = { inputProps: { "aria-label": "Checkbox demo" } }
-    return <Checkbox {...label} checked={row.is_attended} onChange={handleChangeCheckbox} />
+    return (
+        <Checkbox
+            {...label}
+            checked={row.is_attended}
+            style={{ color: "var(--primaryColor)" }}
+            onChange={handleChangeCheckbox}
+        />
+    )
 }
 
 export const ReasonInputComponent = ({ row, customRowData = [], setCustomRowData }) => {
