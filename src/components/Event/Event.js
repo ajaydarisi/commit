@@ -40,12 +40,15 @@ export default function MaterialUIPickers() {
                     />
                 </LocalizationProvider>
             </div>
-            <div className="aliginVertical" style={{ fontSize: "30px", fontWeight: "bold", gap:'75px', paddingTop:'20px', paddingBottom:'20px' }}>
-                <div className="aliginVertical" style={{ fontSize: "18px", fontWeight: "bold", gap:'10px'}}>
+            <div
+                className="aliginVertical"
+                style={{ fontSize: "30px", fontWeight: "bold", gap: "75px", paddingTop: "20px", paddingBottom: "20px" }}
+            >
+                <div className="aliginVertical" style={{ fontSize: "18px", fontWeight: "bold", gap: "10px" }}>
                     <AcUnitIcon />
                     {eventData?.name}
                 </div>
-                <div className="aliginVertical" style={{ fontSize: "18px", fontWeight: "bold", gap:'10px' }}>
+                <div className="aliginVertical" style={{ fontSize: "18px", fontWeight: "bold", gap: "10px" }}>
                     {" "}
                     <AccessTimeIcon />
                     {eventData?.event_time}
