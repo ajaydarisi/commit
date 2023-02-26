@@ -6,8 +6,9 @@ import dayjs from "dayjs";
 import React, { useState } from "react";
 import EventBody from "../EventBody/EventBody";
 import EventTitle from "../EventTitle/EventTitle";
+import "./Event.css";
 
-export default function MaterialUIPickers() {
+export default function Event() {
     const [value, setValue] = useState(dayjs(new Date().toISOString()));
 
     const handleChange = (newValue) => {
@@ -18,16 +19,18 @@ export default function MaterialUIPickers() {
 
     return (
         <div>
-            <EventTitle title="Gita Campus" />
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DesktopDatePicker
-                    label="Date"
-                    inputFormat="DD-MM-YYYY"
-                    value={value}
-                    onChange={handleChange}
-                    renderInput={(params) => <TextField {...params} />}
-                />
-            </LocalizationProvider>
+            <div className="date">
+                <EventTitle title="Gita Campus" />
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DesktopDatePicker
+                        label="Date"
+                        inputFormat="DD-MM-YYYY"
+                        value={value}
+                        onChange={handleChange}
+                        renderInput={(params) => <TextField {...params} />}
+                    />
+                </LocalizationProvider>
+            </div>
             <EventBody />
         </div>
     );

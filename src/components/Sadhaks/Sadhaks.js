@@ -10,7 +10,7 @@ const Sadhaks = () => {
     })
     console.log("sadhaks data is", data)
     return (
-        <div style={{ height: 300, width: "1000px" }}>
+        <div style={{ height: 300, width: "100%" }}>
             <EventTitle title="Gita Campus" />
             <div className="participants">Participants</div>
             <DataGrid rows={data} columns={columns} hideFooter autoHeight />
