@@ -7,14 +7,14 @@ function EventTitle({ title }) {
             <Box
                 sx={{
                     backgroundColor: "rgb(23, 54, 90)",
-                    height: "40px",
+                    height: "50px",
                     width: "10px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                 }}
             />
-            <Typography variant="h6" component="h1">
+            <Typography variant="h5" component="h1">
                 {title}
             </Typography>
         </div>
