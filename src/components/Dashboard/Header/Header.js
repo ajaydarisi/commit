@@ -2,12 +2,13 @@ import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import { Typography } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getParticipantsByGroupId } from "../../../apis/ApiParticipant";
 import EventTitle from "../../EventTitle/EventTitle";
 import "./Header.css";
 
 function Header() {
+    const params = useParams();
     const navigate = useNavigate();
     const { data = [] } = useQuery(["participants"], getParticipantsByGroupId, {
         select: data => data.data.data,

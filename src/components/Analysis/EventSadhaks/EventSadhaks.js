@@ -14,15 +14,16 @@ import "./EventSadhaks.css";
 const EventSadhaks = ({ dateValue }) => {
     const { id: event_id } = useParams();
     const [customRowData, setCustomRowData] = useState([]);
+    const [eventData, setEventData] = useState({});
     const { mutateAsync } = useMutation(mutateEventParticipantAttendence);
     useEffect(() => {
         fetchData();
     }, []);
     const fetchData = async () => {
         const data = await getEventParticipantAttendence({ queryKey: [1, event_id, dateValue] });
+        setEventData(data.data.data);
         setCustomRowData(data.data.data.data);
     };
-
     const columns = [
         {
             field: "id",

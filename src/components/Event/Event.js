@@ -4,6 +4,7 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import EventBody from "../EventBody/EventBody";
 import EventTitle from "../EventTitle/EventTitle";
 import "./Event.css";
@@ -11,12 +12,12 @@ import "./Event.css";
 export default function MaterialUIPickers() {
     const [dateValue, setdateValue] = useState(dayjs(new Date().toISOString()));
 
-    const handleChange = (newdateValue) => {
+    const handleChange = newdateValue => {
         setdateValue(newdateValue);
     };
     const dateValueForApi = dateValue.$D + "-" + (dateValue.$M + 1) + "-" + dateValue.$y;
     console.log(dateValueForApi, "date ");
-
+    const { id } = useParams();
     return (
         <div>
             <div className="date">
@@ -27,10 +28,11 @@ export default function MaterialUIPickers() {
                         inputFormat="DD-MM-YYYY"
                         value={dateValue}
                         onChange={handleChange}
-                        renderInput={(params) => <TextField {...params} />}
+                        renderInput={params => <TextField {...params} />}
                     />
                 </LocalizationProvider>
             </div>
+            <div>helloo</div>
             <EventBody dateValue={dateValueForApi} />
         </div>
     );
