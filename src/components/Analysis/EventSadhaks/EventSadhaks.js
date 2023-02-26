@@ -14,6 +14,7 @@ const EventSadhaks = () => {
     );
 };
 export default EventSadhaks;
+
 const columns = [
     {
         field: "id",
