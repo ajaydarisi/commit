@@ -11,10 +11,6 @@ function Dashboard() {
         time: "7:00 am - 8:00 am",
         attended: 20,
     };
-    const { data = [] } = useQuery(["events"], getEventsByGroupId, {
-        select: data => data.data.data,
-    });
-    console.log("data is ", data);
     return (
         <div>
             <Navbar />

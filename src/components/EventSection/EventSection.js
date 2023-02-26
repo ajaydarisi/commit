@@ -1,7 +1,7 @@
-import React from "react"
-import image1 from "../../assets/SudarshanKriya.jpg"
-import Header from "../Dashboard/Header/Header"
-import EventCard from "../EventCard/EventCard"
+import React from "react";
+import image1 from "../../assets/SudarshanKriya.jpg";
+import Header from "../Dashboard/Header/Header";
+import EventCard from "../EventCard/EventCard";
 
 function EventSection() {
     const cardData = {
@@ -9,7 +9,7 @@ function EventSection() {
         time: "7:00 am - 8:00 am",
         attended: 20,
         image: image1,
-    }
+    };
     return (
         <div>
             <Header />
@@ -17,7 +17,7 @@ function EventSection() {
                 <EventCard cardData={cardData} />
             </div>
         </div>
-    )
+    );
 }
 
-export default EventSection
+export default EventSection;
