@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-const client = axios.create({ baseURL: "http://192.168.29.236:4000" });
+const client = axios.create({ baseURL: "http://192.168.0.109:4000" });
 const defaultAccessToken = null;
 export const request = async ({ ...options }: AxiosRequestConfig<any>) => {
     // const accessToken = defaultAccessToken || getAccessToken();
