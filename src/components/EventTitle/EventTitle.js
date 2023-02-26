@@ -14,7 +14,7 @@ function EventTitle({ title }) {
                     justifyContent: "center",
                 }}
             />
-            <Typography variant="h6" component="h1">
+            <Typography variant="h5" component="h1">
                 {title}
             </Typography>
         </div>

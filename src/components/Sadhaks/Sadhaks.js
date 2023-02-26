@@ -2,15 +2,18 @@ import { DataGrid } from "@mui/x-data-grid"
 import { useQuery } from "@tanstack/react-query"
 import { getParticipantsByGroupId } from "../../apis/ApiParticipant"
 import EventTitle from "../EventTitle/EventTitle"
+import "./Sadhaks.css"
+
 const Sadhaks = () => {
     const { data = [] } = useQuery(["participants"], getParticipantsByGroupId, {
         select: (data) => data.data.data,
     })
     console.log("sadhaks data is", data)
     return (
-        <div style={{ height: 300, width: "100%" }}>
+        <div style={{ height: 300, width: "1000px" }}>
             <EventTitle title="Gita Campus" />
-            <DataGrid rows={data}  hideFooter autoHeight checkboxSelection={true} columns={columns} />
+            <div className="participants">Participants</div>
+            <DataGrid rows={data} columns={columns} hideFooter autoHeight />
         </div>
     )
 }
