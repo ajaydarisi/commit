@@ -1,5 +1,6 @@
 .headerMain {
     margin: 20px 40px;
+    display: flex;
 }
 
 .headerTitle {
@@ -10,4 +11,7 @@
 
 .sadhaks {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
 }

@@ -1,5 +1,5 @@
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import "./Header.css";
 
@@ -22,10 +22,12 @@ function Header() {
                 </Typography>
             </div>
             <div className="sadhaks">
-                <PeopleOutlineIcon />
-                <Typography variant="h6" component="h1">
-                    Sadhaks
-                </Typography>
+                {/* <Button variant="outlined" size="small"> */}
+                    <PeopleOutlineIcon />
+                    <Typography variant="h6" component="h1">
+                        Sadhaks
+                    </Typography>
+                {/* </Button> */}
             </div>
         </div>
     );
