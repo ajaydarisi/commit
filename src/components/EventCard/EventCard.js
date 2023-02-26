@@ -13,7 +13,20 @@ function EventCard({ cardData }) {
     return (
         <div>
             {data?.map((card, index) => {
-                return <div key={index}>Hi</div>;
+                return (
+                    <div key={index} className="card">
+                        <img src={cardData.image} alt="evet Image" />
+                        <div className="cardContent">
+                            <div className="title">{card.name}</div>
+                            <div className="textMedium">Time: {card.event_time}</div>
+                            <div className="textMedium">Attended : {cardData.attended}</div>
+                            <Button variant="contained" style={{ marginTop: "20px" }}>
+                                View more
+                                <KeyboardArrowRightIcon />
+                            </Button>
+                        </div>
+                    </div>
+                );
             })}
             <div className="card">
                 <img src={cardData.image} alt="evet Image" />
