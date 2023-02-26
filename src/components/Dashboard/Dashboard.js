@@ -9,7 +9,7 @@ function Dashboard() {
     // }
     return (
         <div className="app">
-            <div className="navbar">dfadfad</div>
+            <div className="navbar"><Navb/> </div>
             <div className="EventSection">djfoiajdflkjdl</div>
         </div>
     )
