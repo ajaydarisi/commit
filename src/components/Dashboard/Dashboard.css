@@ -1,0 +1,14 @@
+.app {
+    height: 100vh;
+    width: 100vw;
+}
+.navbar {
+    height: 8vh;
+    width: 100%;
+}
+
+.mainBody {
+    height: 92vh;
+    width: 100%;
+    background-color: rgb(152, 154, 158);
+}
