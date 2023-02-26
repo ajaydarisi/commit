@@ -10,7 +10,7 @@ const Sadhaks = () => {
     return (
         <div style={{ height: 300, width: "100%" }}>
             <EventTitle title="Gita Campus" />
-            <DataGrid rows={data} columns={columns} hideFooter autoHeight />
+            <DataGrid rows={data}  hideFooter autoHeight checkboxSelection={true} columns={columns} />
         </div>
     )
 }
