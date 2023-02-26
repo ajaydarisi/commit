@@ -7,9 +7,9 @@ import SadhaksPage from "./pages/sadhaks/SadhaksPage";
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<DashboardPage/>} />
-            <Route path="/Sadhaks" element={<SadhaksPage />} />
-            <Route path="/Sadhaks/:id" element={<EventPage />} />
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/events/:id" element={<EventPage />} />
+            <Route path="/sadhaks" element={<SadhaksPage />} />
         </Routes>
     );
 }
