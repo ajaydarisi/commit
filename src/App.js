@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import Dashboard from "./components/Dashboard/Dashboard"
 
 function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+    return (
+        <div className="App">
+            <Dashboard />
+        </div>
+    )
 }
 
-export default App;
+export default App
