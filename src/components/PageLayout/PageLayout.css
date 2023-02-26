@@ -6,8 +6,14 @@
     height: 8vh;
     width: 100%;
 }
+.quote {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
 
 .mainBody {
     width: 100%;
-    padding: 20px 100px 20px;
+    padding: 0px 100px 20px;
 }
