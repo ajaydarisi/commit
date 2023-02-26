@@ -41,7 +41,7 @@ export function Analysis({ dateValue, handleChange }) {
 
     return (
         <div className="analysisSection">
-            {!participantData.is_taken ? (
+            {participantData.is_taken ? (
                 <div className="pieChart">
                     <Pie data={data} />
                 </div>
