@@ -11,28 +11,34 @@ const EventSadhaks = ({ dateValue }) => {
     const { data } = useQuery(["event-participant-attendence", event_id, dateValue], getEventParticipantAttendence, {
         select: (data) => data.data.data,
     })
-    console.log("data is ", data)
+    console.log("adfkajdkflajdkl data is ", data?.data)
 
     const columns = [
         {
             field: "id",
             headerName: "S.no",
-            width: 100,
+            width: 60,
         },
         {
-            field: "name",
+            field: "Participant",
             headerName: "name",
-            width: 300,
+            width: 250,
+            renderCell: (params) => {
+                return <div>{params.row.Participant.name}</div>
+            },
         },
         {
             field: "mobile",
             headerName: "mobile number",
-            width: 300,
+            width: 150,
+            renderCell: (params) => {
+                return <div>{params.row.Participant.mobile}</div>
+            },
         },
         {
             field: "is_attended",
             headerName: "Is Attended",
-            width: 300,
+            width: 120,
             renderCell: (params) => {
                 console.log("porps is ", params.row.is_attended)
                 return <MyCheckbox checked={params.row.is_attended} />
@@ -48,7 +54,13 @@ const EventSadhaks = ({ dateValue }) => {
                         {!params.row.is_attended ? (
                             "-"
                         ) : (
-                            <TextField id="outlined-basic" label="Reason" variant="outlined" size="small"  style={{marginTop:'5px'}}/>
+                            <TextField
+                                id="outlined-basic"
+                                label="Reason"
+                                variant="outlined"
+                                size="small"
+                                style={{ marginTop: "5px" }}
+                            />
                         )}
                     </div>
                 )
@@ -58,7 +70,7 @@ const EventSadhaks = ({ dateValue }) => {
 
     return (
         <div style={{ height: 300, width: "100%" }}>
-            <DataGrid rows={data?.data || []} columns={columns} hideFooter autoHeight sx={{ p: 10 }} />
+            <DataGrid rows={data?.data || []} columns={columns} hideFooter rowHeight={60} />
         </div>
     )
 }
