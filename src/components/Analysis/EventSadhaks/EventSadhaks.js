@@ -73,7 +73,14 @@ const EventSadhaks = ({ dateValue }) => {
 
     return (
         <div style={{ height: 300, width: "100%" }}>
-            <DataGrid rows={customRowData || []} columns={columns} hideFooter rowHeight={60} autoHeight />
+            <DataGrid
+                rows={customRowData || []}
+                columns={columns}
+                hideFooter
+                rowHeight={60}
+                autoHeight
+                sx={{ maxHeight: 600 }}
+            />
             <div className="saveBtn">
                 <Button variant="contained" onClick={() => mutateAsync(customRowData)}>
                     Save
@@ -96,7 +103,14 @@ export const MyCheckbox = ({ customRowData = [], setCustomRowData, row }) => {
         setCustomRowData(x);
     };
     const label = { inputProps: { "aria-label": "Checkbox demo" } };
-    return <Checkbox {...label} checked={row.is_attended} onChange={handleChangeCheckbox} />;
+    return (
+        <Checkbox
+            {...label}
+            checked={row.is_attended}
+            style={{ color: "var(--primaryColor)" }}
+            onChange={handleChangeCheckbox}
+        />
+    );
 };
 
 export const ReasonInputComponent = ({ row, customRowData = [], setCustomRowData }) => {
