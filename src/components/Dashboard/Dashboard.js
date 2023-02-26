@@ -9,7 +9,6 @@ function Dashboard() {
             <div className="navbar">
                 <Navbar />
             </div>
-
             <div className="mainBody">
                 <EventSection />
             </div>
