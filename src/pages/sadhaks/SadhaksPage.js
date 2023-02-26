@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../components/Dashboard/Navbar/Navbar";
+import Sadhaks from "../../components/Sadhaks/Sadhaks";
 
 function SadhaksPage() {
-  return (
-    <div>SadhaksPage</div>
-  )
+    return (
+        <div>
+            <Navbar />
+            <Sadhaks />
+        </div>
+    );
 }
 
-export default SadhaksPage
+export default SadhaksPage;
