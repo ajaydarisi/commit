@@ -3,15 +3,17 @@ import React from "react"
 import ImageOne from "../../assets/SudarshanKriya.jpg"
 import "./EventCard.css"
 
-function EventCard() {
+function EventCard({ cardData }) {
     return (
         <div className="card">
             <img src={ImageOne} alt="evet Image" />
             <div className="cardContent">
-                <div className="title">Event title</div>
-                <div className="time">Event timings</div>
-                <div className="text">Event Attendance</div>
-                <Button variant="contained">View more</Button>
+                <div className="title">{cardData.title}</div>
+                <div className="textMedium">{cardData.time}</div>
+                <div className="textMedium">Attended : {cardData.attended}</div>
+                <Button variant="contained" style={{ marginTop: "20px" }}>
+                    View more
+                </Button>
             </div>
         </div>
     )
