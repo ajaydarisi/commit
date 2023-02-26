@@ -1,18 +1,20 @@
-import { DataGrid } from "@mui/x-data-grid";
-import { useQuery } from "@tanstack/react-query";
-import { getParticipantsByGroupId } from "../../apis/ApiParticipant";
+import { DataGrid } from "@mui/x-data-grid"
+import { useQuery } from "@tanstack/react-query"
+import { getParticipantsByGroupId } from "../../apis/ApiParticipant"
+import EventTitle from "../EventTitle/EventTitle"
 const Sadhaks = () => {
     const { data = [] } = useQuery(["participants"], getParticipantsByGroupId, {
-        select: data => data.data.data,
-    });
-    console.log("sadhaks data is", data);
+        select: (data) => data.data.data,
+    })
+    console.log("sadhaks data is", data)
     return (
         <div style={{ height: 300, width: "100%" }}>
+            <EventTitle title="Gita Campus" />
             <DataGrid rows={data} columns={columns} hideFooter autoHeight />
         </div>
-    );
-};
-export default Sadhaks;
+    )
+}
+export default Sadhaks
 const columns = [
     {
         field: "id",
@@ -34,4 +36,4 @@ const columns = [
         headerName: "mobile number",
         width: 300,
     },
-];
+]

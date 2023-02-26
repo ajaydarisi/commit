@@ -1,14 +1,13 @@
-import React from "react";
-import Navbar from "../../components/Dashboard/Navbar/Navbar";
-import Sadhaks from "../../components/Sadhaks/Sadhaks";
+import React from "react"
+import PageLayout from "../../components/PageLayout/PageLayout"
+import Sadhaks from "../../components/Sadhaks/Sadhaks"
 
 function SadhaksPage() {
     return (
-        <div>
-            <Navbar />
+        <PageLayout>
             <Sadhaks />
-        </div>
-    );
+        </PageLayout>
+    )
 }
 
-export default SadhaksPage;
+export default SadhaksPage

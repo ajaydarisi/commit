@@ -1,12 +1,13 @@
-import React from "react";
-import Event from "../../components/Event/Event";
+import React from "react"
+import Event from "../../components/Event/Event"
+import PageLayout from "../../components/PageLayout/PageLayout"
 
 function EventPage() {
     return (
-        <div>
+        <PageLayout>
             <Event />
-        </div>
-    );
+        </PageLayout>
+    )
 }
 
-export default EventPage;
+export default EventPage

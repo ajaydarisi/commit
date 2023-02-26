@@ -1,49 +1,44 @@
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import Button from "@mui/material/Button";
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { getEventsByGroupId } from "../../apis/ApiEvent";
-import "./EventCard.css";
+import React from "react"
+import { useNavigate } from "react-router-dom"
+import Image1 from "../../assets/SudarshanKriya.jpg"
+import "./EventCard.css"
 
 function EventCard({ cardData }) {
     const navigate = useNavigate()
-    const { data = [] } = useQuery(["events"], getEventsByGroupId, {
-        select: (data) => data.data.data,
-    });
-    console.log("data is ", data);
+    console.log("card data i s", cardData)
+    const data = {
+        title: "title",
+        time: "time - time",
+        attended: 50,
+    }
     return (
         <div>
-            {data?.map((card, index) => {
-                return (
-                    <div key={index} className="card">
-                        <img src={cardData.image} alt="evet Image" />
-                        <div className="cardContent">
-                            <div className="title">{card.name}</div>
-                            <div className="textMedium">Time: {card.event_time}</div>
-                            <div className="textMedium">Attended : {cardData.attended}</div>
-                            <Button variant="contained" style={{ marginTop: "20px" }} onClick={()=>navigate(`/events/${card?.id}`)}>
-                                View more
-                                <KeyboardArrowRightIcon />
-                            </Button>
-                        </div>
-                    </div>
-                );
-            })}
             <div className="card">
-                <img src={cardData.image} alt="evet Image" />
+                <img src={Image1} alt="evet Image" className="cardImage" />
+                <div className="cardContent">
+                    <div className="title">{data.title}</div>
+                    <div className="textMedium">{data.time}</div>
+                    <div className="textMedium">attended : {data.attended}</div>
+                    <button className="PrimaryBtn" onClick={() => navigate(`/events/${1}`)}>
+                        View
+                    </button>
+                </div>
+            </div>
+
+            {/* <div className="card">
+                <img src={Image1} alt="evet Image" />
                 <div className="cardContent">
                     <div className="title">{cardData.title}</div>
                     <div className="textMedium">{cardData.time}</div>
                     <div className="textMedium">Attended : {cardData.attended}</div>
-                    <Button variant="contained" style={{ marginTop: "20px" }}>
+                    <Button variant="contained" style={{ marginTop: "20px" }} onClick={() => navigate(`/events/${1}`)}>
                         View more
                         <KeyboardArrowRightIcon />
                     </Button>
                 </div>
-            </div>
+            </div> */}
         </div>
-    );
+    )
 }
 
-export default EventCard;
+export default EventCard
