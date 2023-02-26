@@ -11,14 +11,14 @@ import {
 } from "../../../apis/ApiEventParticipantAttendence";
 import "./EventSadhaks.css";
 
-const EventSadhaks = ({ dateValue }) => {
+const EventSadhaks = ({ dateValue, handleChange }) => {
     const { id: event_id } = useParams();
     const [customRowData, setCustomRowData] = useState([]);
     const [eventData, setEventData] = useState({});
     const { mutateAsync } = useMutation(mutateEventParticipantAttendence);
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [dateValue]);
     const fetchData = async () => {
         const data = await getEventParticipantAttendence({ queryKey: [1, event_id, dateValue] });
         setEventData(data.data.data);
@@ -34,7 +34,7 @@ const EventSadhaks = ({ dateValue }) => {
             field: "Participant",
             headerName: "name",
             width: 250,
-            renderCell: params => {
+            renderCell: (params) => {
                 return <div>{params.row.Participant.name}</div>;
             },
         },
@@ -42,7 +42,7 @@ const EventSadhaks = ({ dateValue }) => {
             field: "mobile",
             headerName: "mobile number",
             width: 150,
-            renderCell: params => {
+            renderCell: (params) => {
                 return <div>{params.row.Participant.mobile}</div>;
             },
         },
@@ -50,7 +50,7 @@ const EventSadhaks = ({ dateValue }) => {
             field: "is_attended",
             headerName: "Is Attended",
             width: 300,
-            renderCell: params => {
+            renderCell: (params) => {
                 // console.log("porps is ", params);
                 return (
                     <MyCheckbox row={params.row} setCustomRowData={setCustomRowData} customRowData={customRowData} />
@@ -61,7 +61,7 @@ const EventSadhaks = ({ dateValue }) => {
             field: "reason",
             headerName: "Reason",
             width: 300,
-            renderCell: params => {
+            renderCell: (params) => {
                 return (
                     <ReasonInputComponent
                         row={params.row}
@@ -88,7 +88,11 @@ const EventSadhaks = ({ dateValue }) => {
                     variant="contained"
                     onClick={async () => {
                         mutateAsync({ data: customRowData, event_id: event_id, date: dateValue });
-                        await Swal.fire("Your attendence is saved successfully", "success");
+                        const { isConfirmed } = await Swal.fire("Your attendence is saved successfully", "success");
+                        console.log(isConfirmed, "res");
+                        if (isConfirmed) {
+                            handleChange(1,1);
+                        }
                     }}
                     style={{
                         backgroundColor: "var(--primaryColor)",
@@ -104,8 +108,8 @@ const EventSadhaks = ({ dateValue }) => {
 export default EventSadhaks;
 
 export const MyCheckbox = ({ customRowData = [], setCustomRowData, row }) => {
-    const handleChangeCheckbox = e => {
-        const x = customRowData?.map(customRow => {
+    const handleChangeCheckbox = (e) => {
+        const x = customRowData?.map((customRow) => {
             if (customRow.id == row.id) {
                 return { ...customRow, is_attended: !customRow.is_attended };
             } else {
@@ -126,8 +130,8 @@ export const MyCheckbox = ({ customRowData = [], setCustomRowData, row }) => {
 };
 
 export const ReasonInputComponent = ({ row, customRowData = [], setCustomRowData }) => {
-    const handleChangeInput = e => {
-        const x = customRowData?.map(customRow => {
+    const handleChangeInput = (e) => {
+        const x = customRowData?.map((customRow) => {
             if (customRow.id == row.id) {
                 return { ...customRow, reason: e.target.value };
             } else {

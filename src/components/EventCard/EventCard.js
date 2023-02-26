@@ -15,7 +15,7 @@ function EventCard({ cardData }) {
     return (
         <div>
             <div className="card">
-                <img src={Image1} alt="evet Image" className="cardImage" />
+                <img src={cardData.image_link} alt="evet Image" className="cardImage" />
                 <div className="cardContent">
                     <div className="title">{data.title}</div>
                     <div className="textMedium">{data.time}</div>

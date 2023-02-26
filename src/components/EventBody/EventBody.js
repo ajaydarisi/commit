@@ -63,7 +63,7 @@ export default function BasicTabs({ dateValue }) {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <EventSadhaks dateValue={dateValue} />
+                <EventSadhaks dateValue={dateValue} handleChange={handleChange}/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <Analysis dateValue={dateValue} handleChange={handleChange} />
