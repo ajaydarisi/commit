@@ -1,3 +1,4 @@
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"
 import Button from "@mui/material/Button"
 import React from "react"
 import ImageOne from "../../assets/SudarshanKriya.jpg"
@@ -13,6 +14,7 @@ function EventCard({ cardData }) {
                 <div className="textMedium">Attended : {cardData.attended}</div>
                 <Button variant="contained" style={{ marginTop: "20px" }}>
                     View more
+                    <KeyboardArrowRightIcon />
                 </Button>
             </div>
         </div>
