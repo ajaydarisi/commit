@@ -19,11 +19,12 @@ export function Analysis({ dateValue, handleChange }) {
         }
     );
     console.log("data iswfgervegrteg ", participantData);
-    const attendedParticipantsCount = participantData?.data?.map((participant) => {
-        if (participant.is_attended) {
-            return 1;
+    var attendedParticipantsCount = 0;
+    participantData?.data?.map((participant) => {
+        if (participant?.is_attended) {
+            attendedParticipantsCount += 1;
         }
-    }).length;
+    });
     console.log(attendedParticipantsCount, "AttendedParticipants");
     const data = {
         labels: ["Attended", "Not Attended"],
@@ -31,7 +32,7 @@ export function Analysis({ dateValue, handleChange }) {
         datasets: [
             {
                 label: "Sadhaks",
-                data: [attendedParticipantsCount, participantData.data.length - attendedParticipantsCount],
+                data: [attendedParticipantsCount, participantData?.data?.length - attendedParticipantsCount],
                 backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
                 borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)"],
                 borderWidth: 1,
@@ -41,7 +42,7 @@ export function Analysis({ dateValue, handleChange }) {
 
     return (
         <div className="analysisSection">
-            {true ? (
+            {participantData?.is_taken ? (
                 <div className="pieChart">
                     <Pie data={data} />
                 </div>
