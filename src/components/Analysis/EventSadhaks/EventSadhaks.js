@@ -4,6 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useMutation } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import {
     getEventParticipantAttendence,
     mutateEventParticipantAttendence,
@@ -82,7 +83,13 @@ const EventSadhaks = ({ dateValue }) => {
                 sx={{ maxHeight: 600 }}
             />
             <div className="saveBtn">
-                <Button variant="contained" onClick={() => mutateAsync(customRowData)}>
+                <Button
+                    variant="contained"
+                    onClick={async () => {
+                        mutateAsync({ data: customRowData, event_id: event_id, date: dateValue });
+                        await Swal.fire("Good job!", "You clicked the button!", "success");
+                    }}
+                >
                     Save
                 </Button>
             </div>
@@ -135,6 +142,7 @@ export const ReasonInputComponent = ({ row, customRowData = [], setCustomRowData
                         label="Reason"
                         variant="outlined"
                         size="small"
+                        value={row.reason}
                         style={{ marginTop: "5px" }}
                         onChange={handleChangeInput}
                     />
