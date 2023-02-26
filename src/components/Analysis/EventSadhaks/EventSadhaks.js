@@ -34,7 +34,8 @@ const EventSadhaks = () => {
             field: "is_attended",
             headerName: "Is Attended",
             width: 300,
-            renderCell: () => {
+            renderCell: (props) => {
+                console.log("porps is ", props);
                 return <Checkbox {...label} />
             },
         },
@@ -43,7 +44,7 @@ const EventSadhaks = () => {
             headerName: "Reason",
             width: 300,
             renderCell: () => {
-                return <TextField id="outlined-basic" label="Reason" variant="outlined" />
+                return <TextField id="outlined-basic" label="Reason" variant="outlined" className="TextField" />
             },
         },
     ]
