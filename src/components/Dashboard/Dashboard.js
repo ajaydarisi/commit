@@ -1,5 +1,7 @@
 import React from "react"
 import EventCard from "../EventCard/EventCard"
+import Header from "./Header/Header";
+import Navbar from "./Navbar/Navbar";
 
 function Dashboard() {
     const cardData = {
@@ -9,9 +11,11 @@ function Dashboard() {
     }
     return (
         <div>
+            <Navbar />
+            <Header />
             <EventCard cardData={cardData} />
         </div>
-    )
+    );
 }
 
-export default Dashboard
+export default Dashboard;
