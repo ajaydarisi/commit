@@ -1,6 +1,11 @@
+import { TextField } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { useQuery } from "@tanstack/react-query";
 import { getParticipantsByGroupId } from "../../../apis/ApiParticipant";
+
+const RenderAttendance = () => {
+    return <TextField id="standard-basic" label="Standard" variant="standard" />;
+};
 
 const EventSadhaks = () => {
     const { data = [] } = useQuery(["participants"], getParticipantsByGroupId, {
@@ -35,6 +40,11 @@ const columns = [
         field: "is_attended",
         headerName: "Is Attended",
         width: 300,
+        renderCell: ()=>{
+            return(
+                <div>helllooo</div>
+            )
+        },
     },
     {
         field: "reason",
