@@ -1,7 +1,11 @@
+import { Button } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import './Analysis.css'
+import { useParams } from "react-router-dom";
+import { getEventParticipantAttendence } from "../../apis/ApiEventParticipantAttendence";
+import "./Analysis.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -19,10 +23,25 @@ export const data = {
     ],
 };
 
-export function Analysis() {
+export function Analysis({ dateValue, handleChange }) {
+    const { id: event_id } = useParams();
+    const { data } = useQuery(["event-participant-attendence", event_id, dateValue], getEventParticipantAttendence, {
+        select: (data) => data.data.data,
+    });
+    console.log("data is ", data.is_taken);
+
     return (
         <div className="pieChart">
-            <Pie data={data} />
+            {data.is_taken ? (
+                <Pie data={data} />
+            ) : (
+                <div>
+                    <div>Attendance not taken</div>
+                    <Button variant="contained" onClick={() => handleChange(0, 0)}>
+                        Go to sadhaks
+                    </Button>
+                </div>
+            )}
         </div>
     );
 }
