@@ -24,7 +24,7 @@ function Header() {
                 </Typography>
             </div>
 
-            <div className="sadhaks" onClick={() => navigate(`/Sadhaks/${1}`)}>
+            <div className="sadhaks" onClick={() => navigate(`/sadhaks/${1}`)}>
                 <PeopleOutlineIcon />
 
                 <Typography variant="h6" component="h1">
