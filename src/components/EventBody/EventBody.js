@@ -50,13 +50,7 @@ export default function BasicTabs() {
     return (
         <Box sx={{ width: "100%" }}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="basic tabs example"
-                    textColor="#abcdef"
-                    indicatorColor="#abcdef"
-                >
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                     <Tab label="Sadhaks" {...a11yProps(0)} />
                     <Tab label="Analysis" {...a11yProps(1)} />
                 </Tabs>
