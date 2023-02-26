@@ -87,7 +87,11 @@ const EventSadhaks = ({ dateValue }) => {
                     variant="contained"
                     onClick={async () => {
                         mutateAsync({ data: customRowData, event_id: event_id, date: dateValue });
-                        await Swal.fire("Good job!", "You clicked the button!", "success");
+                        await Swal.fire("Your attendence is saved successfully", "success");
+                    }}
+                    style={{
+                        backgroundColor: "var(--primaryColor)",
+                        color: "white",
                     }}
                 >
                     Save
