@@ -4,22 +4,20 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient();
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
+    <div>
         <QueryClientProvider client={queryClient}>
             <Router>
                 <App />
             </Router>
         </QueryClientProvider>
-        <ReactQueryDevtools />
-    </React.StrictMode>
+        {/* <ReactQueryDevtools /> */}
+    </div>
 );
 
 // If you want to start measuring performance in your app, pass a function
