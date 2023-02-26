@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react"
+import EventCard from "../EventCard/EventCard"
 
 function Dashboard() {
     return (
-        <div>hellow dash board</div>
-        
+        <div>
+            <EventCard />
+        </div>
     )
 }
 
