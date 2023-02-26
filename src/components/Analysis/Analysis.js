@@ -18,13 +18,11 @@ export function Analysis({ dateValue, handleChange }) {
             select: (data) => data.data.data,
         }
     )
-    console.log("data is ", participantData.is_taken)
     const attendedParticipantsCount = participantData.data.map((participant) => {
         if (participant.is_attended) {
             return 1
         }
     }).length
-    console.log(attendedParticipantsCount, "AttendedParticipants")
     const data = {
         labels: ["Attended", "Not Attended"],
         // ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],

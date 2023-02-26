@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 :root {
-    /* --primaryColor: #ffa801; */
-    --primaryColor: rgb(23, 54, 90);
+    /* --primaryColor: #1F8A70; */
+    /* --primaryColor: #F6BD60; */
+    /* --primaryColor: #1a1a1a; */
+    /* --primaryColor: #2834a0; */
+    /* --primaryColor: #032a38; */
+    --primaryColor: #0F6292;
+    /* --primaryColor: rgb(23, 54, 90); */
 }
 /* img {
     width: 100%;
@@ -21,14 +26,16 @@ div {
     height: 100%;
     color: red;
 }
-.PrimaryBtn {
-    cursor: pointer;
-    padding: 0px 100px;
-    margin-top: 10px;
-    background-color: var(--primaryColor);
-    color: white;
-    border-radius: 5px;
-    border: none;
-    height: 40px;
+.aliginVertical {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 

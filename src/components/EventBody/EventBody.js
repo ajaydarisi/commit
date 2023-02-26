@@ -46,7 +46,6 @@ export default function BasicTabs({ dateValue }) {
 
     const handleChange = (event, newValue) => {
         setValue(newValue)
-        console.log(newValue, "New value of tab")
     }
 
     return (

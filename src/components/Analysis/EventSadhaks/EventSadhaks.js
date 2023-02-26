@@ -49,7 +49,6 @@ const EventSadhaks = ({ dateValue }) => {
             headerName: "Is Attended",
             width: 300,
             renderCell: (params) => {
-                // console.log("porps is ", params);
                 return <MyCheckbox row={params.row} setCustomRowData={setCustomRowData} customRowData={customRowData} />
             },
         },

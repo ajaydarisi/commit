@@ -8,7 +8,6 @@ const Sadhaks = () => {
     const { data = [] } = useQuery(["participants"], getParticipantsByGroupId, {
         select: (data) => data.data.data,
     })
-    console.log("sadhaks data is", data)
     return (
         <div style={{ height: 300, width: "100%" }}>
             <EventTitle title="Gita Campus" />
