@@ -1,5 +1,6 @@
 import React from "react"
 import Navbar from "../Dashboard/Navbar/Navbar"
+import "./PageLayout.css"
 
 function PageLayout({ children }) {
     return (

@@ -1,12 +1,13 @@
-import React from "react";
-import Dashboard from "../../components/Dashboard/Dashboard";
+import React from "react"
+import EventSection from "../../components/EventSection/EventSection"
+import PageLayout from "../../components/PageLayout/PageLayout"
 
 function DashboardPage() {
     return (
-        <div>
-            <Dashboard />
-        </div>
-    );
+        <PageLayout>
+            <EventSection />
+        </PageLayout>
+    )
 }
 
-export default DashboardPage;
+export default DashboardPage

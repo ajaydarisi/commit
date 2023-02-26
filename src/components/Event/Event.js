@@ -1,8 +1,7 @@
 import React from "react"
-import PageLayout from "../PageLayout/PageLayout"
 
 function Event() {
-    return <PageLayout>paste your component heree......!</PageLayout>
+    return <div>hello event page</div>
 }
 
 export default Event

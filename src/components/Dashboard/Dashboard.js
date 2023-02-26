@@ -3,7 +3,7 @@ import EventSection from "../EventSection/EventSection"
 import PageLayout from "../PageLayout/PageLayout"
 import "./Dashboard.css"
 
-function Dashboard({ children }) {
+function Dashboard() {
     return (
         <PageLayout>
             <EventSection />
