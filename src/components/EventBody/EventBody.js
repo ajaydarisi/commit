@@ -46,6 +46,7 @@ export default function BasicTabs({ dateValue }) {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        console.log(newValue, "New value of tab");
     };
 
     return (
@@ -60,7 +61,7 @@ export default function BasicTabs({ dateValue }) {
                 <EventSadhaks dateValue={dateValue} />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <Analysis />
+                <Analysis dateValue={dateValue} handleChange={handleChange}/>
             </TabPanel>
         </Box>
     );

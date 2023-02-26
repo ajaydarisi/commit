@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
@@ -32,17 +32,23 @@ const EventSadhaks = ({ dateValue }) => {
         {
             field: "id",
             headerName: "S.no",
-            width: 100,
+            width: 60,
         },
         {
-            field: "name",
+            field: "Participant",
             headerName: "name",
-            width: 300,
+            width: 250,
+            renderCell: params => {
+                return <div>{params.row.Participant.name}</div>;
+            },
         },
         {
             field: "mobile",
             headerName: "mobile number",
-            width: 300,
+            width: 150,
+            renderCell: params => {
+                return <div>{params.row.Participant.mobile}</div>;
+            },
         },
         {
             field: "is_attended",
@@ -73,7 +79,10 @@ const EventSadhaks = ({ dateValue }) => {
 
     return (
         <div style={{ height: 300, width: "100%" }}>
-            <DataGrid rows={customRowData || []} columns={columns} hideFooter autoHeight sx={{ p: 10 }} />
+            <DataGrid rows={customRowData || []} columns={columns} hideFooter rowHeight={60} autoHeight />
+            <div className="saveBtn">
+                <Button variant="contained">Save</Button>
+            </div>
         </div>
     );
 };
