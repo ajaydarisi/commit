@@ -1,7 +1,7 @@
-import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-import { Box, Button, Typography } from "@mui/material";
-import React from "react";
-import "./Header.css";
+import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline"
+import { Box, Typography } from "@mui/material"
+import React from "react"
+import "./Header.css"
 
 function Header() {
     return (
@@ -22,15 +22,14 @@ function Header() {
                 </Typography>
             </div>
             <div className="sadhaks">
-                {/* <Button variant="outlined" size="small"> */}
-                    <PeopleOutlineIcon />
-                    <Typography variant="h6" component="h1">
-                        Sadhaks
-                    </Typography>
-                {/* </Button> */}
+                <PeopleOutlineIcon />
+                <Typography variant="h6" component="h1">
+                    Sadhaks
+                </Typography>
+                <div>(20 )</div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Header;
+export default Header
