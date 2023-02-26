@@ -8,3 +8,10 @@ export const getEventParticipantAttendence = async data => {
         params: { event_id, date },
     });
 };
+export const mutateEventParticipantAttendence = async data => {
+    return request({
+        url: "/event-participant-attendence",
+        method: "PATCH",
+        data: data,
+    });
+};
