@@ -2,10 +2,12 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Button from "@mui/material/Button";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { getEventsByGroupId } from "../../apis/ApiEvent";
 import "./EventCard.css";
 
 function EventCard({ cardData }) {
+    const navigate = useNavigate()
     const { data = [] } = useQuery(["events"], getEventsByGroupId, {
         select: (data) => data.data.data,
     });
@@ -20,7 +22,7 @@ function EventCard({ cardData }) {
                             <div className="title">{card.name}</div>
                             <div className="textMedium">Time: {card.event_time}</div>
                             <div className="textMedium">Attended : {cardData.attended}</div>
-                            <Button variant="contained" style={{ marginTop: "20px" }}>
+                            <Button variant="contained" style={{ marginTop: "20px" }} onClick={()=>navigate(`/events/${card?.id}`)}>
                                 View more
                                 <KeyboardArrowRightIcon />
                             </Button>

@@ -1,11 +1,11 @@
-import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline"
-import { Box, Typography } from "@mui/material"
-import React from "react"
-import { useNavigate } from "react-router-dom"
-import "./Header.css"
+import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
+import { Box, Typography } from "@mui/material";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Header.css";
 
 function Header() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     return (
         <div className="headerMain">
             <div className="headerTitle">
@@ -24,7 +24,7 @@ function Header() {
                 </Typography>
             </div>
 
-            <div className="sadhaks" onClick={() => navigate(`/sadhaks/${1}`)}>
+            <div className="sadhaks" onClick={() => navigate("/sadhaks")}>
                 <PeopleOutlineIcon />
 
                 <Typography variant="h6" component="h1">
@@ -33,7 +33,7 @@ function Header() {
                 <div>(20 )</div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Header
+export default Header;
