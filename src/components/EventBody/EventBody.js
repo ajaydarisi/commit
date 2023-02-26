@@ -1,34 +1,67 @@
-import { useQuery } from "@tanstack/react-query";
-import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
+import PropTypes from "prop-types";
 import React from "react";
-import { Pie } from "react-chartjs-2";
-import { getEventParticipantAttendence } from "../../apis/ApiEventParticipantAttendence";
+import { Analysis } from "../Analysis/Analysis";
+import EventSadhaks from "../Analysis/EventSadhaks/EventSadhaks";
 import "./EventBody.css";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
 
-export const data = {
-    labels: ["Attended", "Not Attended"],
-    // ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-        {
-            label: "Sadhaks",
-            data: [12, 3],
-            backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
-            borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)"],
-            borderWidth: 1,
-        },
-    ],
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
+
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
 };
 
-export function EventBody() {
-    const { data } = useQuery(["event-participant-attendence"], getEventParticipantAttendence, {
-        select: data => data.data.data,
-    });
-    console.log("data is ", data);
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        "aria-controls": `simple-tabpanel-${index}`,
+    };
+}
+
+export default function BasicTabs({ dateValue }) {
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
     return (
-        <div className="pieChart">
-            {/* <Pie data={data} /> */}
-        </div>
+        <Box sx={{ width: "100%" }}>
+            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                    <Tab label="Sadhaks" {...a11yProps(0)} />
+                    <Tab label="Analysis" {...a11yProps(1)} />
+                </Tabs>
+            </Box>
+            <TabPanel value={value} index={0}>
+                <EventSadhaks dateValue={dateValue} />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+                <Analysis />
+            </TabPanel>
+        </Box>
     );
 }

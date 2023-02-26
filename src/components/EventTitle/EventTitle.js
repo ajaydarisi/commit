@@ -6,7 +6,7 @@ function EventTitle({ title }) {
         <div style={{ marginTop: "10px", marginBottom: "18px", display: "flex", gap: "8px", alignItems: "center" }}>
             <Box
                 sx={{
-                    backgroundColor: "rgb(23, 54, 90)",
+                backgroundColor: "var(--primaryColor)",
                     height: "40px",
                     width: "10px",
                     display: "flex",
@@ -14,7 +14,7 @@ function EventTitle({ title }) {
                     justifyContent: "center",
                 }}
             />
-            <Typography variant="h6" component="h1">
+            <Typography variant="h5" component="h1">
                 {title}
             </Typography>
         </div>
