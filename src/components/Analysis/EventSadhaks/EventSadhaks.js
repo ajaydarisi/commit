@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getEventParticipantAttendence } from "../../../apis/ApiEventParticipantAttendence";
+import './EventSadhaks.css'
 
 const EventSadhaks = ({ dateValue }) => {
     const { id: event_id } = useParams();
