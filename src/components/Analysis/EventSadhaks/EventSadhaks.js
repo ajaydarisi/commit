@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material"
+import { Button, TextField } from "@mui/material"
 import Checkbox from "@mui/material/Checkbox"
 import { DataGrid } from "@mui/x-data-grid"
 import React, { useEffect, useState } from "react"
@@ -87,9 +87,15 @@ const EventSadhaks = ({ dateValue }) => {
                 sx={{ maxHeight: 600 }}
             />
             <div className="saveBtn">
-                <button variant="contained" className="PrimaryBtn">
+                <Button
+                    variant="contained"
+                    style={{
+                        backgroundColor: "var(--primaryColor)",
+                        color: "white",
+                    }}
+                >
                     Save
-                </button>
+                </Button>
             </div>
         </div>
     )
