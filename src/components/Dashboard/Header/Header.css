@@ -1,0 +1,17 @@
+.headerMain {
+    margin: 20px 40px;
+    display: flex;
+}
+
+.headerTitle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sadhaks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
