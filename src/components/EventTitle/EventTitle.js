@@ -6,7 +6,7 @@ function EventTitle({ title }) {
         <div style={{ marginTop: "10px", marginBottom: "18px", display: "flex", gap: "8px", alignItems: "center" }}>
             <Box
                 sx={{
-                    backgroundColor: "#7677F4",
+                    backgroundColor: "rgb(23, 54, 90)",
                     height: "40px",
                     width: "10px",
                     display: "flex",
