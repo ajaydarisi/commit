@@ -15,12 +15,6 @@ function EventSection() {
             <Header />
             <div className="cardsViewSection">
                 <EventCard cardData={cardData} />
-                <EventCard cardData={cardData} />
-                <EventCard cardData={cardData} />
-                <EventCard cardData={cardData} />
-                <EventCard cardData={cardData} />
-                <EventCard cardData={cardData} />
-                <EventCard cardData={cardData} />
             </div>
         </div>
     );
