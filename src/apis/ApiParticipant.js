@@ -1,7 +1,7 @@
 import { request } from "../utils/axios-utils.ts";
 
-export const getEventsByGroupId = async ({ group_id }) => {
+export const getParticipantsByGroupId = async ({ group_id }) => {
     return request({
-        url: "/particpants",
+        url: "/participants",
     });
 };
