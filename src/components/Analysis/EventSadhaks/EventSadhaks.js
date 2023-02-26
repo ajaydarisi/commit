@@ -71,10 +71,10 @@ const EventSadhaks = ({ dateValue }) => {
 
     return (
         <div style={{ height: 300, width: "100%" }}>
+            <DataGrid rows={data?.data || []} columns={columns} hideFooter rowHeight={60} />
             <div className="saveBtn">
                 <Button variant="contained">Save</Button>
             </div>
-            <DataGrid rows={data?.data || []} columns={columns} hideFooter rowHeight={60} />
         </div>
     );
 };
