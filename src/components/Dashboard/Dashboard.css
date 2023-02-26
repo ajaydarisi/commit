@@ -3,3 +3,13 @@
     height: 100%;
     background-color: grey;
 }
+.navbar{
+    height: 10%;
+    width: 100%;
+}
+
+.mainBody{
+    height: 90%;
+    width: 100%;
+    background-color: rgb(152, 154, 158);
+}

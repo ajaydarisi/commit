@@ -4,11 +4,15 @@ import "./Dashboard.css"
 import Navbar from "./Navbar/Navbar"
 
 function Dashboard() {
-   
     return (
         <div className="app">
-            <Navbar />
-            <EventSection />
+            <div className="navbar">
+                <Navbar />
+            </div>
+
+            <div className="mainBody">
+                <EventSection />
+            </div>
         </div>
     )
 }
