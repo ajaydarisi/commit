@@ -8,7 +8,16 @@
 }
 
 .mainBody {
-    height: 100vh;
     width: 100%;
-    background-color: rgb(152, 154, 158);
+    background-color: rgb(151, 157, 168);
+    padding: 20px 100px 20px;
+}
+
+.cardsViewSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 15px;
 }
