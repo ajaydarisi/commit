@@ -1,33 +1,26 @@
 import { Button, TextField } from "@mui/material"
 import Checkbox from "@mui/material/Checkbox"
 import { DataGrid } from "@mui/x-data-grid"
+import { useMutation } from "@tanstack/react-query"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getEventParticipantAttendence } from "../../../apis/ApiEventParticipantAttendence"
+import {
+    getEventParticipantAttendence,
+    mutateEventParticipantAttendence,
+} from "../../../apis/ApiEventParticipantAttendence"
 import "./EventSadhaks.css"
 
 const EventSadhaks = ({ dateValue }) => {
     const { id: event_id } = useParams()
     const [customRowData, setCustomRowData] = useState([])
-
+    const { mutateAsync } = useMutation(mutateEventParticipantAttendence)
     useEffect(() => {
         fetchData()
     }, [])
     const fetchData = async () => {
         const data = await getEventParticipantAttendence({ queryKey: [1, event_id, dateValue] })
-        // console.log("data is", data.data.data);
         setCustomRowData(data.data.data.data)
     }
-    // const { data } = useQuery(["event-participant-attendence", event_id, dateValue], getEventParticipantAttendence, {
-    //     select: data => data.data.data,
-    // });
-    // const memoizedData = useMemo(() => data, [data]);
-
-    // if (memoizedData !== customRowData) {
-    //     console.log("change eee change");
-    //     setCustomRowData(memoizedData);
-    // }
-    // console.log("custom row data  is ", customRowData);
 
     const columns = [
         {
@@ -93,6 +86,7 @@ const EventSadhaks = ({ dateValue }) => {
                         backgroundColor: "var(--primaryColor)",
                         color: "white",
                     }}
+                    onClick={() => mutateAsync(customRowData)}
                 >
                     Save
                 </Button>
