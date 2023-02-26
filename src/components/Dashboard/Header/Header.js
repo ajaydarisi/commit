@@ -1,8 +1,7 @@
-import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-import { Box, Typography } from "@mui/material";
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
+import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline"
+import { Box, Typography } from "@mui/material"
+import React from "react"
+import "./Header.css"
 
 function Header() {
     return (
@@ -22,18 +21,18 @@ function Header() {
                     Gita Campus
                 </Typography>
             </div>
-            <Link to="/sadhaks">
-                <div className="sadhaks">
-                    <PeopleOutlineIcon />
+            {/* <Link to="/sadhaks"> */}
+            <div className="sadhaks">
+                <PeopleOutlineIcon />
 
-                    <Typography variant="h6" component="h1">
-                        Sadhaks
-                    </Typography>
-                    <div>(20 )</div>
-                </div>
-            </Link>
+                <Typography variant="h6" component="h1">
+                    Sadhaks
+                </Typography>
+                <div>(20 )</div>
+            </div>
+            {/* </Link> */}
         </div>
-    );
+    )
 }
 
-export default Header;
+export default Header

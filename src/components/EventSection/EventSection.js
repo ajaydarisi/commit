@@ -11,9 +11,15 @@ function EventSection() {
         image: image1,
     };
     return (
-        <div>
+        <div className="eventSectionMain">
             <Header />
             <div className="cardsViewSection">
+                <EventCard cardData={cardData} />
+                <EventCard cardData={cardData} />
+                <EventCard cardData={cardData} />
+                <EventCard cardData={cardData} />
+                <EventCard cardData={cardData} />
+                <EventCard cardData={cardData} />
                 <EventCard cardData={cardData} />
             </div>
         </div>

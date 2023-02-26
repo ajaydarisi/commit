@@ -1,13 +1,13 @@
 .navBar {
     height: 100%;
     width: 100%;
-    background-color: rgb(32, 126, 235);
+    background-color: rgb(23, 54, 90);
     color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
 }
-.logo{
+.logo {
     font-size: 22px;
     font-weight: 600;
-    
-
 }
-

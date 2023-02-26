@@ -12,10 +12,13 @@ function Dashboard() {
         attended: 20,
     };
     return (
-        <div>
-            <Navbar />
-            <Header />
-            <EventCard cardData={cardData} />
+        <div className="app">
+            <div className="navbar">
+                <Navbar />
+            </div>
+            <div className="mainBody">
+                <EventSection />
+            </div>
         </div>
     );
 }
