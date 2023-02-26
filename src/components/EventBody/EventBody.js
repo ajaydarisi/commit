@@ -1,7 +1,9 @@
+import { useQuery } from "@tanstack/react-query";
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import './EventBody.css'
+import { getEventParticipantAttendence } from "../../apis/ApiEventParticipantAttendence";
+import "./EventBody.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -20,9 +22,13 @@ export const data = {
 };
 
 export function EventBody() {
+    const { data } = useQuery(["event-participant-attendence"], getEventParticipantAttendence, {
+        select: data => data.data.data,
+    });
+    console.log("data is ", data);
     return (
         <div className="pieChart">
-            <Pie data={data} />
+            {/* <Pie data={data} /> */}
         </div>
     );
 }
