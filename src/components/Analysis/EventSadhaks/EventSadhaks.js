@@ -60,7 +60,6 @@ const EventSadhaks = ({ dateValue, handleChange }) => {
             flex: 0.4,
 
             renderCell: params => {
-                // console.log("porps is ", params);
                 return (
                     <MyCheckbox row={params.row} setCustomRowData={setCustomRowData} customRowData={customRowData} />
                 );

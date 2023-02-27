@@ -18,10 +18,13 @@
     margin-left: auto;
     cursor: pointer;
 }
-.count{
+.count {
     background-color: var(--primaryColor);
-    padding: 0px 5px;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: -1px;
 }

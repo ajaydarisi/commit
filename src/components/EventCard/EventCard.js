@@ -1,12 +1,12 @@
+import AccessTimeIcon from "@mui/icons-material/AccessTime"
 import { Button } from "@mui/material"
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import Image1 from "../../assets/SudarshanKriya.jpg"
+
 import "./EventCard.css"
 
 function EventCard({ cardData }) {
     const navigate = useNavigate()
-    console.log("card data i s", cardData)
     const data = {
         title: "title",
         time: "time - time",
@@ -17,13 +17,17 @@ function EventCard({ cardData }) {
             <div className="card">
                 <img src={cardData.image_link} alt="evet Image" className="cardImage" />
                 <div className="cardContent">
-                    <div className="title">{data.title}</div>
-                    <div className="textMedium">{data.time}</div>
-                    <div className="textMedium">attended : {data.attended}</div>
+                    <div className="title">{cardData.name}</div>
+                    <div className="textMedium aliginVertical">
+                        {" "}
+                        <AccessTimeIcon /> {cardData.event_time}
+                    </div>
+
                     <Button
                         style={{
                             backgroundColor: "var(--primaryColor)",
                             color: "white",
+                            marginTop: "10px",
                         }}
                         onClick={() => navigate(`/events/${cardData?.id}`)}
                     >

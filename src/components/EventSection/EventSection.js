@@ -8,7 +8,6 @@ function EventSection() {
     const { data = [] } = useQuery(["events"], getEventsByGroupId, {
         select: (data) => data.data.data,
     })
-    console.log("data is ", data)
   
     return (
         <div>
